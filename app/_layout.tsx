@@ -28,6 +28,7 @@ Sentry.init({
 export default Sentry.wrap(function RootLayout() {
 
   const {isLoading, fetchAuthenticateUser} = useAuthStore();
+  
 
 
   const [fontsLoaded, error] = useFonts({
