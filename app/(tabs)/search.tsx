@@ -1,11 +1,26 @@
-import { Text, View } from 'react-native'
+import { getCategories, getMenu } from '@/lib/appwrite';
+import useAppwrite from '@/lib/useAppwrite';
+import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const search = () => {
+const Search = () => {
+  const {data, refetch, loading} = useAppwrite({
+    fn: getMenu,
+    params: {
+      category: '',
+      query: '',
+      limit: 6,
+    }
+  });
+  const {data: categories} = useAppwrite({fn: getCategories});
+
+  console.log(data);
+  
   return (
-    <View>
+    <SafeAreaView>
       <Text>search</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
-export default search
+export default Search
