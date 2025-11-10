@@ -1,5 +1,7 @@
 import CartButton from '@/components/CartButton';
+import Filter from '@/components/Filter';
 import MenuCard from '@/components/MenuCard';
+import SearchBar from '@/components/SearchBar';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import useAppwrite from '@/lib/useAppwrite';
 import { MenuItem } from '@/type';
@@ -44,7 +46,8 @@ const Search = () => {
               </View>
               <CartButton />
             </View>
-            <Text>Search Input</Text>
+            <SearchBar />
+            <Filter categories={categories}/> 
             <Text>Filter</Text>
           </View>
         )}
